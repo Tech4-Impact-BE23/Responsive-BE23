@@ -7,6 +7,8 @@
     <title>Bootstrap with Node.js</title>
     <!-- include Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- external self css -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -35,14 +37,33 @@
                     </li>
                     <li class="nav-item px-2">
                         <img id="avatar" src="" width="30" height="30" class="rounded-circle">
-                      </li>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container">
-        <h1>Hello, Bootstrap!</h1>
-    </div>
+
+    <header>
+        <div class="container-fluid" id="banner-image" style="height: 90vh;">
+            <div class="row container justify-content-center">
+                <div class="col-7 text-start text-light">
+                    <h1 class="fw-bold" style="font-size: 7rem;">Asean Youth Forum</h1>
+                </div>
+                <div class="col-5 text-center text-light" style="border-left: 5px solid #fff;">
+                    <h1 class="fs-5 mx-3">ASEAN Youth Forum adalah sebuah wadah aspirasi bagi para pemuda dari
+                        negara-negara anggota ASEAN
+                        yang bertujuan untuk meningkatkan kesadaran pemuda tentang isu-isu regional, serta mempromosikan
+                        peran pemuda dalam membangun ASEAN yang lebih baik dan lebih berkelanjutan. Forum ini memberikan
+                        kesempatan kepada pemuda untuk berbagi gagasan, pengalaman, dan inovasi dalam memecahkan masalah
+                        regional, seperti perdamaian, keamanan, kemiskinan, pendidikan, dan lingkungan hidup. </h1>
+                </div>
+                <div class="col-7 my-5">
+                    <a href="#" type="button" class="btn btn-light btn-lg rounded-0 text-uppercase">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <!-- include jQuery and Popper.js -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
