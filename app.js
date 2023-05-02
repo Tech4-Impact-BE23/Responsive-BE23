@@ -54,9 +54,9 @@ passwordToggle.addEventListener("click", function () {
     // toggle the input field's type between "password" and "text"
     if (passwordField.type === "password") {
         passwordField.type = "text";
-        passwordToggle.innerHTML = '<i class="bi bi-eye"></i>';
+        passwordToggle.innerHTML = '<i class="bi bi-eye-slash"></i>';
     } else {
         passwordField.type = "password";
-        passwordToggle.innerHTML = '<i class="bi bi-eye></i>';
+        passwordToggle.innerHTML = '<i class="bi bi-eye"></i>';
     }
 });
