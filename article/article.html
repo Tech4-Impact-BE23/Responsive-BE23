@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</title>
+    <script src="article.js"></script>
+    <link rel="stylesheet" href="article.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="https://i.ibb.co/xLyHBMb/asean-logo.png" alt="logo" height="60px">
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+           <li><a href="#home">Home</a></li>
+           <li><a href="#about">About</a></li>
+           <li><a class="active" href="#article">Article</a></li>
+           <li><a href="#community">Community</a></li>
+           <li><img src="user.avif" height="30px" alt=""></li>
+
+        </ul>
+     </nav>
+     <!-- <div class="search-wrapper"></div>
+     <label for="search">Search article</label>
+     <input type="search" name="search article" id="search">
+     <div class="article-cards" data-article-card-container></div>
+
+     <template data-article-card>
+        <div class="card">
+            <div class="header" data-header></div>
+            <div class="body" data-body></div>
+            <div class="button"></div>
+         </div>
+     </template>
+     -->
+     
+     
+     <!-- <h3 class="text-center mt-2">Article Searching</h3>
+     <input type="text" class="form-control mt-3 mx-auto" id="myinput" placeholder="live searching..." style="width: 30%;">
+     <div class="container">
+        <h5 class="text-danger mt-5 text-center" id="para" style="display: none;">Not Found</h5>
+        <div class="row mt-3" id="card">
+
+        </div>
+     </div>
+
+     <style>
+        .card{
+            transition: all0.5s ease;
+            cursor: pointer;
+            box-shadow: 0px 0px -4px rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+        }
+        .card:hover{
+            box-shadow: 0px 0px 51px -36px rgba(0, 0, 0, 1);
+        }
+     </style> -->
+    <div class="container">
+        <h1>Articles</h1>
+        <div id="searchWrapper">
+            <input
+                type="text"
+                name="searchBar"
+                id="searchBar"
+                placeholder="search for an article"
+            />
+        </div>
+        <ul id="articleList"></ul>
+    </div>
+    <script src="app.js"></script>
+
+     <footer>
+        <div class="footer_info">
+            <div class="footer_width about">
+                <img src="https://i.ibb.co/xLyHBMb/asean-logo.png" alt="logo" height="60px">
+                <p>
+                Kami menyadari akan kebutuhan kolaborasi dengan berbagai pihak lain untuk menjadikan jejaring ini sebagai pemacu dan pengungkit ekosistem keberdayaan warga, lebih dari sekedar platform penggalangan sumber daya.
+            </p>
+            </div>
+            <div class="footer_width key">
+                <h4>Key</h4>
+                <ul>
+                    <li>Youth</li>
+                    <li>Connect</li>
+                    <li>Communication</li>
+                    <li>Blend</li>
+                </ul>
+            </div>
+            <div class="footer_width company">
+                <h4>Company</h4>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Articles</li>
+                    <li>Community</li>
+                </ul>
+            </div>
+            <div class="footer_width contact">
+                <h4>Contact</h4>
+                <ul>
+                    <a href="https://web.facebook.com/ASEANYouthForum/?_rdc=1&_rdr"><span class="fab fa-facebook"></span></a>
+                    <a href="https://www.instagram.com/asean.youth.forum/?hl=en"><i class="fab fa-instagram"></i></a>
+                </ul>
+            </div>
+        </div>
+     </footer>
+
+     
+</body>
+</html>
