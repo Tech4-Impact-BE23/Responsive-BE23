@@ -61,32 +61,77 @@
 //     },
 // ];
 
-const dataArticleTemplate = document.querySelector("[data-article-template]")
-const dataArticleCardContainer = document.querySelector("[data-article-card-container]")
-const searchInput = document.querySelector("[data-search]")
+// const dataArticleTemplate = document.querySelector("[data-article-template]")
+// const dataArticleCardContainer = document.querySelector("[data-article-card-container]")
+// const searchInput = document.querySelector("[data-search]")
 
-let articles = []
+// let articles = []
 
-searchInput.addEventListener("input", e => {
-    const value = e.target.value.toLowerCase()
-    articles.forEach(article => {
-        const isVisible = 
-            article.title.toLowerCase().includes(value) || 
-            article.body.toLowerCase().includes(value)
-        article.element.classList.toggle("hide", !isVisible)
-    })
-})
+// searchInput.addEventListener("input", e => {
+//     const value = e.target.value.toLowerCase()
+//     articles.forEach(article => {
+//         const isVisible = 
+//             article.title.toLowerCase().includes(value) || 
+//             article.body.toLowerCase().includes(value)
+//         article.element.classList.toggle("hide", !isVisible)
+//     })
+// })
 
-fetch('https://jsonplaceholder.typicode.com/posts')
-.then(res => res.json())
-.then(data => {
-    articles = data.map(article => {
-    const card = dataArticleTemplate.content.cloneNode(true).children[0]
-    const header = card.querySelector("[data-header]")
-    const body = card.querySelector("[data-body]")
-    header.textContent = article.title
-    body.textContent = article.body
-    dataArticleCardContainer.append(card)
-    return { title: article.title, body: article.body, element: card }
-    })
-})
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then(res => res.json())
+// .then(data => {
+//     articles = data.map(article => {
+//     const card = dataArticleTemplate.content.cloneNode(true).children[0]
+//     const header = card.querySelector("[data-header]")
+//     const body = card.querySelector("[data-body]")
+//     header.textContent = article.nama
+//     body.textContent = article.email
+//     dataArticleCardContainer.append(card)
+//     return { title: article.name, body: article.email, element: card }
+//     })
+// })
+
+const data = [
+	'Lebrecht — One Mans Relationship With Beethovens Music =======> It is a sad fact in the 2020s that anyone writing a book praising the achievements of an artist on the order of Ludwig van Beethoven situates himself on the dangerous side of a political question. The Wall Street Journal',
+    'The Ugly World of Add-On Fees for Everything =======> Heres a trend I hope doesnt catch on: Paying extra for things I like less',
+	'NOONAN: Biden vs. Trump in 2024? Dont Be So Sure... =======> Look at voters faces when you describe the match-up and you will realize they are open to alternatives' ,
+	'USA Arms Warplanes With "Bunker Busting" Bombs in Message to Iran =======> The Air Forces A-10 Warthogs are carrying 250-pound precision-guided weapons in the Mideast',
+	'I Cloned Myself With AI. She Fooled My Bank and My Family =======> Our columnist replaced herself with AI voice and video to see how humanlike the tech can be. The results were eerie',
+
+];
+
+const btnSearch 	= document.getElementById('btnSearch');
+const btnClear 		= document.getElementById('btnClear');
+const search 		= document.getElementsByName('keyword')[0];
+const data_section 	= document.getElementsByClassName('data')[0];
+
+btnSearch.addEventListener('click', event => {
+	searchData();
+});
+
+btnClear.addEventListener('click', event => {
+	search.value = "";
+});
+
+search.addEventListener('keyup', event => {
+	if (event.keyCode === 13) {
+		searchData();
+	}
+});
+
+
+function searchData() {
+	const search_value 	= search.value.toLowerCase();
+
+	// Copy array data ke variable data_filtered
+	const data_filtered = data.slice(0);
+
+	// Lakukan perulangan pada semua data untuk cek apakah ada yang mengandung "keyword" atau tidak
+	data_section.innerHTML = "";
+	for (var i = 0; i < data_filtered.length; i++) {
+		if ( data_filtered[i].toLowerCase().includes(search_value) ) {			
+			// Jika ada, Masukkan data ke list data pencarian yang didapat
+			data_section.innerHTML += "<a href='#'>"+data_filtered[i]+"</a>";
+		}
+	}	
+}

@@ -27,48 +27,49 @@
            <li><img src="user.avif" height="30px" alt=""></li>
 
         </ul>
-     </nav>
-     <!-- <div class="search-wrapper"></div>
-     <label for="search">Search article</label>
-     <input type="search" name="search article" id="search">
-     <div class="article-cards" data-article-card-container></div>
+    </nav>
 
-     <template data-article-card>
-        <div class="card">
-            <div class="header" data-header></div>
-            <div class="body" data-body></div>
-            <div class="button"></div>
-         </div>
-     </template>
-     -->
-     
-     
-     <!-- <h3 class="text-center mt-2">Article Searching</h3>
-     <input type="text" class="form-control mt-3 mx-auto" id="myinput" placeholder="live searching..." style="width: 30%;">
-     <div class="container">
-        <h5 class="text-danger mt-5 text-center" id="para" style="display: none;">Not Found</h5>
-        <div class="row mt-3" id="card">
-
-        </div>
-     </div>
-
-     <style>
-        .card{
-            transition: all0.5s ease;
-            cursor: pointer;
-            box-shadow: 0px 0px -4px rgba(0, 0, 0, 0.75);
-            border-radius: 10px;
-        }
-        .card:hover{
-            box-shadow: 0px 0px 51px -36px rgba(0, 0, 0, 1);
-        }
-     </style> -->
     <div class="search-wrapper">
+        <div class="search-wrapper-header">
         <h1>Articles</h1>
-        <label for="search">
+
+        <div>
+			<input type="text" name="keyword">
+		</div>
+        <div>
+			<button class="btn" id="btnSearch">Search Data</button>			
+			<button class="btn" id="btnClear">Clear Input</button>			
+		</div>
+        <br/>
+    </div>
+        <div class="data">
+			<a href="https://www.wsj.com/articles/why-beethoven-review-can-a-genius-survive-a9e1e516">
+                <h4>Lebrecht — One Man's Relationship With Beethoven's Music</h4>
+                <p>It is a sad fact in the 2020s that anyone writing a book praising the achievements of an artist on the order of Ludwig van Beethoven situates himself on the dangerous side of a political question. The Wall Street Journal</p>
+
+            </a>
+			<a href="https://www.wsj.com/articles/the-ugly-world-of-add-on-fees-for-everything-e41dc776">
+                <h4>The Ugly World of Add-On Fees for Everything</h4>
+                <p>Here's a trend I hope doesn't catch on: Paying extra for things I like less</p>
+            </a>
+			<a href="https://www.wsj.com/articles/biden-vs-trump-dont-be-so-sure-rfk-third-party-rematch-2024-election-independents-bea741f2">
+                <h4>NOONAN: Biden vs. Trump in 2024? Don't Be So Sure...</h4>
+                <p>Look at voters' faces when you describe the match-up and you'll realize they're open to alternatives.</p>
+            </a>
+            <a href="https://www.wsj.com/articles/u-s-arms-warplanes-with-bunker-busting-bombs-in-message-to-iran-ba1ecb08">
+                <h4>USA Arms Warplanes With 'Bunker Busting' Bombs in Message to Iran...</h4>
+                <p>The Air Force's A-10 Warthogs are carrying 250-pound precision-guided weapons in the Mideast</p>
+            </a>
+            <a href="https://www.wsj.com/articles/i-cloned-myself-with-ai-she-fooled-my-bank-and-my-family-356bd1a3">
+                <h4>I Cloned Myself With AI. She Fooled My Bank and My Family</h4>
+                <p>Our columnist replaced herself with AI voice and video to see how humanlike the tech can be. The results were eerie.</p>
+            </a>
+		</div>
+        <script src="article.js"></script>
+        <!-- <label for="search">
 
         </label>
-        <input type="search" id="search" placeholder="search for an article" data-search>
+        <input type="search" id="search" placeholder="search for an article" data-search> -->
     </div>
 
     <div class="text-about">
@@ -82,13 +83,13 @@
         </div>
     </div>
 
-    <div class="article-cards" data-article-card-container></div>
+    <!-- <div class="article-cards" data-article-card-container></div>
     <template data-article-template>
         <div class="card">
             <div class="header" data-header></div>
             <div class="body" data-body></div>
         </div>
-    </template>
+    </template> -->
 
      <footer>
         <div class="footer_info">
