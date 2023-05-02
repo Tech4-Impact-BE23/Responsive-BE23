@@ -63,16 +63,30 @@
 
 const dataArticleTemplate = document.querySelector("[data-article-template]")
 const dataArticleCardContainer = document.querySelector("[data-article-card-container]")
+const searchInput = document.querySelector("[data-search]")
+
+let articles = []
+
+searchInput.addEventListener("input", e => {
+    const value = e.target.value.toLowerCase()
+    articles.forEach(article => {
+        const isVisible = 
+            article.title.toLowerCase().includes(value) || 
+            article.body.toLowerCase().includes(value)
+        article.element.classList.toggle("hide", isVisible)
+    })
+})
 
 fetch('https://jsonplaceholder.typicode.com/posts')
 .then(res => res.json())
 .then(data => {
-    data.forEach(article => {
+    articles = data.map(article => {
     const card = dataArticleTemplate.content.cloneNode(true).children[0]
     const header = card.querySelector("[data-header]")
     const body = card.querySelector("[data-body]")
     header.textContent = article.title
-    body.textContent = article.description
+    body.textContent = article.body
     dataArticleCardContainer.append(card)
+    return { title: article.title, body: article.body, element: card }
     })
 })
