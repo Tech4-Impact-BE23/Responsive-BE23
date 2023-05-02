@@ -73,7 +73,7 @@ searchInput.addEventListener("input", e => {
         const isVisible = 
             article.title.toLowerCase().includes(value) || 
             article.body.toLowerCase().includes(value)
-        article.element.classList.toggle("hide", isVisible)
+        article.element.classList.toggle("hide", !isVisible)
     })
 })
 
