@@ -32,10 +32,21 @@
     object-fit: cover;
 }
 
-
-
 .cardbody-color {
     background-color: #ebf2fa;
+}
+
+.btn,
+.btn.active:hover {
+    background-color: #4E9BB9;
+    color: #fff;
+}
+
+.btn:hover,
+.btn.active {
+    background-color: #fff;
+    color: #4E9BB9;
+    border: 2px solid #4E9BB9;
 }
 
 footer {
