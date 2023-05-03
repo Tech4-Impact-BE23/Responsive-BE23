@@ -89,7 +89,7 @@ header.shadow .logo{
     color: var(--bg-color);
 }
 .logo span {
-    color: orange;
+    color: rgb(255, 227, 170);
 }
 .nav ul{
     display: flex;
@@ -234,6 +234,7 @@ footer {
     bottom: 0;
 
 }
+
 .footer_info {
     width: 90%;
     margin: 0 20px ;
