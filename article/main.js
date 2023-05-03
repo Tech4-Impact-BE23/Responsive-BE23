@@ -91,47 +91,28 @@
 //     })
 // })
 
-const data = [
-	'Lebrecht — One Mans Relationship With Beethovens Music =======> It is a sad fact in the 2020s that anyone writing a book praising the achievements of an artist on the order of Ludwig van Beethoven situates himself on the dangerous side of a political question. The Wall Street Journal',
-    'The Ugly World of Add-On Fees for Everything =======> Heres a trend I hope doesnt catch on: Paying extra for things I like less',
-	'NOONAN: Biden vs. Trump in 2024? Dont Be So Sure... =======> Look at voters faces when you describe the match-up and you will realize they are open to alternatives' ,
-	'USA Arms Warplanes With "Bunker Busting" Bombs in Message to Iran =======> The Air Forces A-10 Warthogs are carrying 250-pound precision-guided weapons in the Mideast',
-	'I Cloned Myself With AI. She Fooled My Bank and My Family =======> Our columnist replaced herself with AI voice and video to see how humanlike the tech can be. The results were eerie',
+//filter
+$(document).ready(function(){
+    $('.filter-item').click(function(){
+        const value = $(this).attr('data-filter')
+        if (value == 'all') {
+            $('.post-box').show('1000')
+        }
+        else{
+            $('.post-box').not('.' + value).hide('1000')
+            $('.post-box').filter('.' + value).show('1000')            
+        }
+    })
+})
 
-];
+//active button
+$(".filter-item").click(function () {
+    $(this).addClass("active-filter").siblings().removeClass("active-filter")
+})
 
-const btnSearch 	= document.getElementById('btnSearch');
-const btnClear 		= document.getElementById('btnClear');
-const search 		= document.getElementsByName('keyword')[0];
-const data_section 	= document.getElementsByClassName('data')[0];
+//header
+let header = document.querySelector("header")
 
-btnSearch.addEventListener('click', event => {
-	searchData();
-});
-
-btnClear.addEventListener('click', event => {
-	search.value = "";
-});
-
-search.addEventListener('keyup', event => {
-	if (event.keyCode === 13) {
-		searchData();
-	}
-});
-
-
-function searchData() {
-	const search_value 	= search.value.toLowerCase();
-
-	// Copy array data ke variable data_filtered
-	const data_filtered = data.slice(0);
-
-	// Lakukan perulangan pada semua data untuk cek apakah ada yang mengandung "keyword" atau tidak
-	data_section.innerHTML = "";
-	for (var i = 0; i < data_filtered.length; i++) {
-		if ( data_filtered[i].toLowerCase().includes(search_value) ) {			
-			// Jika ada, Masukkan data ke list data pencarian yang didapat
-			data_section.innerHTML += "<a href='#'>"+data_filtered[i]+"</a>";
-		}
-	}	
-}
+window.addEventListener("scroll", () => {
+    header.classList.toggle("shadow", window.scrollY > 0)
+})
