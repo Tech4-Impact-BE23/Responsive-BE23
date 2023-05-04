@@ -56,16 +56,84 @@
         style="background-color: #fff; z-index: 0; margin-top: -5vh; position: relative;">
         <h2 class="text-center p-md-5">Forum Community</h2>
         <div class="row">
-            <div class="col-4 text-center">
-                <button class="btn w-100 rounded-2 text-center" id="btn-Event" href="/index.html">Button 1</button>
+            <div class="col-md-4 text-center mb-2">
+                <button class="btn w-100 rounded-2 text-center disabled" id="btn-Event"
+                    href="/index.html">Event</button>
             </div>
-            <div class="col-4 text-center">
-                <button class="btn w-100 rounded-2 text-center active" id="btn-Tutorial" href="/tutorial.html">Button 1</button>
+            <div class="col-md-4 text-center mb-2">
+                <button class="btn w-100 rounded-2 text-center disabled" id="btn-Tutorial"
+                    href="/tutorial.html">Tutorial</button>
             </div>
-            <div class="col-4 text-center">
-                <button class="btn w-100 rounded-2 text-center" id="btn-Tanya" href="/login.html">Button 3</button>
+            <div class="col-md-4 text-center mb-2">
+                <button class="btn w-100 rounded-2 text-center active" id="btn-Tanya" href="/login.html">Tanya
+                    Jawab</button>
             </div>
         </div>
+        <div class="row-cols-9 w-100 p-5">
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                aria-expanded="false" aria-controls="collapseExample">
+                Add Question
+            </button>
+        </div>
+        <div class="collapse" id="collapseExample">
+            <form id="question-form">
+                <div class="form-group mb-4">
+                    <label for="country">Country</label>
+                    <select class="form-control" id="country">
+                        <option>Indonesia</option>
+                        <option>Malaysia</option>
+                        <option>Singapore</option>
+                        <option>Thailand</option>
+                        <option>Filipina</option>
+                        <option>Brunei Darussalam</option>
+                        <option>Vietnam</option>
+                        <option>Laos</option>
+                        <option>Myanmar</option>
+                        <option>Kamboja</option>
+                        <optio>Timor Leste</option>
+                    </select>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name">
+                </div>
+                <div class="form-group mb-4">
+                    <label for="question">Question</label>
+                    <textarea class="form-control" id="question" rows="3" placeholder="Enter question"></textarea>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="date">Date</label>
+                    <input type="date" class="form-control" id="date">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </form>
+        </div>
+        <div class="container">
+            <div class="row" id="questions-container"></div>
+        </div>
+
+        <!-- Question card template -->
+        <div class="card question-card mb-3" style="display: none;">
+            <div class="card-body">
+                <div class="row-cols-2">
+                    <p class="card-text"><strong>Country:</strong> <span class="country"></span></p>
+                </div>
+                <div class="row-cols-2">
+                    <p class="card-text"><strong>Name:</strong> <span class="name"></span></p>
+                </div>
+                <div class="row-cols-2">
+                    <p class="card-text"><strong>Question:</strong> <span class="question"></span></p>
+                </div>
+                <div class="row-cols-2">
+                    <p class="card-text"><strong>Date:</strong> <span class="date"></span></p>
+                </div>
+                <div class="row-cols-9">
+                    <a href="none" target="_blank" rel="noopener noreferrer">
+                        <img id="avatar" src="" width="30" height="30" class="rounded-circle"></a>
+                </div>
+            </div>
+        </div>
+
     </div>
     <footer class="container-fluid mt-3">
         <div class="container py-2">
@@ -74,7 +142,8 @@
                     <a class="px-5" href="#">
                         <img src="assets/asean-youth-forum-1626933383562 1.png" alt="Logo">
                     </a>
-                    <p>Kami menyadari akan kebutuhan kolaborasi dengan berbagai pihak lain untuk menjadikan jejaring ini
+                    <p>Kami menyadari akan kebutuhan kolaborasi dengan berbagai pihak lain untuk menjadikan jejaring
+                        ini
                         sebagai pemacu dan pengungkit ekosistem keberdayaan warga, lebih dari sekedar platform
                         penggalangan sumber daya.</p>
                 </div>
