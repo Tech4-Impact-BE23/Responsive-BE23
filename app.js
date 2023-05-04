@@ -31,7 +31,7 @@ fetch(apiUrl)
             questionCard.querySelector('.question').textContent = question.question;
             questionCard.querySelector('.name').textContent = question.name;
             questionCard.querySelector('.date').textContent = question.date;
-            questionCard.querySelector('#avatar').textContent = question.avatar;
+            questionCard.querySelector('#avatar').src = question.avatar;
 
             // Show the card
             questionCard.style.display = '';
