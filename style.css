@@ -32,10 +32,47 @@
     object-fit: cover;
 }
 
-
-
 .cardbody-color {
     background-color: #ebf2fa;
+}
+
+#btn-Event,
+#btn-Event.active:hover {
+    background-color: #4E9BB9;
+    color: #fff;
+}
+
+#btn-Event:hover,
+#btn-Event.active {
+    background-color: #fff;
+    color: #4E9BB9;
+    border: 2px solid #4E9BB9;
+}
+
+#btn-Tutorial,
+#btn-Tutorial.active:hover {
+    background-color: #4E9BB9;
+    color: #fff;
+}
+
+#btn-Tutorial:hover,
+#btn-Tutorial.active {
+    background-color: #fff;
+    color: #4E9BB9;
+    border: 2px solid #4E9BB9;
+}
+
+#btn-Tanya,
+#btn-Tanya.active:hover {
+    background-color: #4E9BB9;
+    color: #fff;
+}
+
+#btn-Tanya:hover,
+#btn-Tanya.active {
+    background-color: #fff;
+    color: #4E9BB9;
+    border: 2px solid #4E9BB9;
 }
 
 footer {

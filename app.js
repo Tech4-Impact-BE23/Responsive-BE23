@@ -13,50 +13,30 @@ fetch('https://644d30d8cfdddac9709f3a9d.mockapi.io/AYF/icons')
     })
     .catch(error => console.error(error));
 
-//validation
-const form = document.getElementById('login-form');
-const usernameInput = document.getElementById('Username');
-const passwordIpnut = document.getElementById('password');
-const errorAlert = document.getElementById('errorAlert');
+const apiUrl = 'https://644d30d8cfdddac9709f3a9d.mockapi.io/AYF/users';
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
+// Fetch data from the API
+fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+        // Display up to 5 questions
+        for (let i = 0; i < Math.min(data.length, 5); i++) {
+            const question = data[i];
 
-    fetch('https://644d30d8cfdddac9709f3a9d.mockapi.io/AYF/users')
-        .then(response => response.json())
-        .then(data => {
-            const username = usernameInput.value.trim();
-            const password = passwordIpnut.value.trim();
-            const user = data.find(users => users.username === username && users.password === password);
+            // Clone the question card template
+            const questionCard = document.querySelector('.question-card').cloneNode(true);
 
-            if (user) {
-                // Login success, redirect to homepage
-                window.location.href = 'index.html';
-            } else {
-                // alert("Incorrect username or password. Please try again.")
-                // Login failed, show error message
-                // const errorMessage = document.createElement('div');
-                // errorMessage.classList.add('alert', 'alert-danger');
-                errorAlert.textContent = 'Incorrect username or password. Please try again.';
-                errorAlert.classList.remove("d-none");
-                // form.appendChild(errorMessage);
-            }
-        })
-        .catch(error => console.error(error));
-});
+            // Update the card with the question data
+            questionCard.querySelector('.country').textContent = question.country;
+            questionCard.querySelector('.question').textContent = question.question;
+            questionCard.querySelector('.name').textContent = question.name;
+            questionCard.querySelector('.date').textContent = question.date;
+            questionCard.querySelector('#avatar').src = question.avatar;
 
-// get references to the password input field and the show/hide password button
-var passwordField = document.getElementById("password");
-var passwordToggle = document.getElementById("password-toggle");
+            // Show the card
+            questionCard.style.display = '';
 
-// add a click event listener to the show/hide password button
-passwordToggle.addEventListener("click", function () {
-    // toggle the input field's type between "password" and "text"
-    if (passwordField.type === "password") {
-        passwordField.type = "text";
-        passwordToggle.innerHTML = '<i class="bi bi-eye-slash"></i>';
-    } else {
-        passwordField.type = "password";
-        passwordToggle.innerHTML = '<i class="bi bi-eye"></i>';
-    }
-});
+            // Add the card to the questions container
+            document.querySelector('#questions-container').appendChild(questionCard);
+        }
+    });
