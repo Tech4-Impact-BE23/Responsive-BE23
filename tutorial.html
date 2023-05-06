@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap with Node.js</title>
+    <title>YouthistiCon</title>
     <!-- include Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js">
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
         <div class="container">
             <a class="navbar-brand px-5" href="#">
                 <img src="assets/asean-youth-forum-1626933383562 1.png" alt="Logo">
@@ -27,20 +27,29 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav mx-2">
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="index.html">About</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="#">Articles</a>
+                        <a class="nav-link" href="/article/main_page.html">Articles</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="#">Community</a>
+                        <a class="nav-link" href="tutorial.html">Community</a>
                     </li>
-                    <li class="nav-item px-3">
-                        <a href="index.html" target="_blank" rel="noopener noreferrer">
-                            <img id="avatar" src="" width="30" height="30" class="rounded-circle"></a>
+                    <li class="nav-item px-2 dropdown">
+                        <a class="nav-link dropdown-toggle" href="login.html" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                            <img id="avatar" src="" width="30" height="30" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="#navbarDropdown">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="register.html">Register</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -165,9 +174,10 @@
                 </div>
                 <div class="col-md">
                     <p>Follow us:</p>
-                    <a href="#"><i class="bi bi-facebook me-2"></i></a>
-                    <a href="#"><i class="bi bi-twitter me-2"></i></a>
-                    <a href="#"><i class="bi bi-instagram me-2"></i></a>
+                    <a href="https://web.facebook.com/ASEANYouthForum/?_rdc=1&_rdr"><i
+                            class="bi bi-facebook me-2"></i></a>
+                    <a href="https://www.instagram.com/asean.youth.forum/?hl=en"><i
+                            class="bi bi-instagram me-2"></i></a>
                 </div>
             </div>
         </div>
