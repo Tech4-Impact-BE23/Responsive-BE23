@@ -1,4 +1,10 @@
-const { create } = require("../articles/article.service");
+const {
+  create,
+  getArticle,
+  getArticleById,
+  updateArticle,
+  deleteArticle,
+} = require("../articles/article.service");
 
 module.exports = {
   createArticle: (req, res) => {
@@ -14,6 +20,70 @@ module.exports = {
       return res.status(200).json({
         success: 1,
         data: results,
+      });
+    });
+  },
+  getArticleById: (req, res) => {
+    const id = req.params.id;
+    getArticleById(id, (err, results) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      if (!results) {
+        return res.json({
+          success: 0,
+          message: "Article not found!",
+        });
+      }
+      return res.json({
+        success: 1,
+        data: results,
+      });
+    });
+  },
+  getArticle: (req, res) => {
+    getArticle((err, results) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      return res.json({
+        success: 1,
+        data: results,
+      });
+    });
+  },
+  updateArticle: (req, res) => {
+    const id = req.params.id;
+    const body = req.body;
+    updateArticle(id, body, (err, results) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      return res.json({
+        success: 1,
+        data: "Update successfully!",
+      });
+    });
+  },
+  deleteArticle: (req, res) => {
+    const id = req.params.id;
+    deleteArticle(id, (err, results) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      // if (!results) {
+      //   return res.json({
+      //     success: 0,
+      //     message: "Article not found!",
+      //   });
+      // }
+      return res.json({
+        success: 1,
+        message: "Article deleted successfully!",
       });
     });
   },
