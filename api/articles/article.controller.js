@@ -43,26 +43,6 @@ module.exports = {
       });
     });
   },
-  // getArticleByTitle: (req, res) => {
-  //   const title = req.params.title;
-  //   getArticleByTitle(title, (err, results) => {
-  //     if (err) {
-  //       console.log(err);
-  //       return;
-  //     }
-  //     if (!results) {
-  //       return res.json({
-  //         success: 0,
-  //         message: "Article not found!",
-  //       });
-  //     }
-  //     return res.json({
-  //       success: 1,
-  //       data: results,
-  //     });
-  //   });
-  // },
-
   getArticleByTitle: (req, res) => {
     const title = req.params.title;
     getArticleByTitle(title, (err, results) => {
