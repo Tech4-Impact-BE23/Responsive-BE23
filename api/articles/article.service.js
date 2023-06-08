@@ -33,6 +33,18 @@ module.exports = {
       }
     );
   },
+  getArticleByTitle: (title, callbacks) => {
+    pool.query(
+      `select * from article where title like ?`,
+      [`%${title}%`],
+      (error, results, fields) => {
+        if (error) {
+          return callbacks(error, null);
+        }
+        return callbacks(null, results);
+      }
+    );
+  },
   updateArticle: (id, data, callbacks) => {
     pool.query(
       `update article set title=?, description=?, image_link=? where id=?`,

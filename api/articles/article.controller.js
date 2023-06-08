@@ -2,6 +2,7 @@ const {
   create,
   getArticle,
   getArticleById,
+  getArticleByTitle,
   updateArticle,
   deleteArticle,
 } = require("../articles/article.service");
@@ -31,6 +32,49 @@ module.exports = {
         return;
       }
       if (!results) {
+        return res.json({
+          success: 0,
+          message: "Article not found!",
+        });
+      }
+      return res.json({
+        success: 1,
+        data: results,
+      });
+    });
+  },
+  // getArticleByTitle: (req, res) => {
+  //   const title = req.params.title;
+  //   getArticleByTitle(title, (err, results) => {
+  //     if (err) {
+  //       console.log(err);
+  //       return;
+  //     }
+  //     if (!results) {
+  //       return res.json({
+  //         success: 0,
+  //         message: "Article not found!",
+  //       });
+  //     }
+  //     return res.json({
+  //       success: 1,
+  //       data: results,
+  //     });
+  //   });
+  // },
+
+  getArticleByTitle: (req, res) => {
+    const title = req.params.title;
+    getArticleByTitle(title, (err, results) => {
+      // Use the service function
+      if (err) {
+        console.log(err);
+        return res.json({
+          success: 0,
+          message: "Error retrieving article!",
+        });
+      }
+      if (!results || results.length === 0) {
         return res.json({
           success: 0,
           message: "Article not found!",
